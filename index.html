@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worst Leaders In History</title>
+    <link rel="icon" href="icon.webp">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+        p{
+            margin: 1em 0;
+        }
+        section{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .stalin{
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('sovietflag.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        .hitler{
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('flagermany.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        .mao{
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('flag-chinese.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .pot{
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('flagcambodia.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .kim{
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('flagnorth.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .title{
+            background: black;
+        }
+        .title::after{
+            content: '';
+            width: 100%;
+            height: 50%;
+            background-color: white;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+        }
+        .title h1{
+            color: #fff;
+            margin: 20px;
+            font-size: 30px;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+            z-index: 1;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        .image-gallery img {
+            max-width: 19%;
+            height: auto;
+            margin-bottom: 20px;
+            object-fit: cover;
+            overflow: hidden;
+            transition: 300ms ease-in-out all;
+            border-radius: 15px;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+        img{
+            transition: 300ms ease-in-out all;
+            border-radius: 15px;
+        }
+        .row{
+            position: relative;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+        }
+        .row .column{
+            flex-basis: 50%;
+            margin: 0 auto;
+        }
+        .row .column img{
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+        }
+        h2{
+            margin: 15px;
+        }
+        .deaths{
+            margin: 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .deaths h4{
+            font-size: 150px;
+        }
+        .column.white{
+            background: white;
+            color: #000;
+            padding: 20px;
+        }
+        .column100{
+            width: 80%;
+            background: #fff;
+            margin: 50px;
+            padding: 15px;
+        }
+        .people{
+            display: grid;
+            width: 80%;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 1em;
+        }
+        .fa-solid{
+            font-size: 2em;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #880808;
+        }
+        .people.small{
+            margin-top: 50px;
+            display: grid;
+            width: 80%;
+            grid-template-columns: repeat(40, 1fr);
+            gap: 0.8em;
+        }
+        .people.small .fa-solid{
+            font-size: 1.5em;
+        }
+        .iframebox {
+            position: relative;
+            width: 80%; /* Adjust the width as needed */
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (height = width * 9/16) */
+        }
+        .iframebox iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        @media (max-width: 900px) {
+            .row{
+                flex-direction: column;
+            }
+            .title::after{
+                display: none;
+            }
+            .deaths h4{
+                font-size: 50px;
+            }
+            .fa-solid{
+                font-size: 1.5em;
+            }
+        }
+        @media (max-width: 700px) {
+            .people{
+                grid-template-columns: repeat(10, 1fr);
+            }
+            .fa-solid{
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="title">
+        <div class="content">
+            <h1>The Five Worst Leaders in History</h1>
+            <div class="image-gallery">
+                <img src="Stalin.jpg" alt="Image of Stalin">
+                <img src="hitler.jpg" alt="Image of Hitler">
+                <img src="mao.jpg" alt="Image of Mao Zedong">
+                <img src="kim.jpg" alt="Image of Kim il Sung">
+                <img src="pol.jpg" alt="Image of Pol Pot">
+            </div>
+        </div>
+    </section>
+    <section class="pot">
+        <div class="row">
+            <div class="column">
+                <img src="potbig.jpg" alt="loldsa">
+            </div>
+            <div class="column white">
+                <h2>5. Pol Pot (Cambodia, 1975-1979):</h2>
+                <p>The leader of the Khmer Rouge, Pol Pot orchestrated the Cambodian Genocide, leading to the deaths of approximately 1.7 million people.</p>
+                <p>The Cambodian genocide was the systematic persecution and killing of Cambodian citizens by the Khmer Rouge under the leadership of the Communist Party of Kampuchea, General Secretary Pol Pot. It resulted in the deaths of 1.5 to 2 million people from 1975 to 1979, nearly a quarter of Cambodia's population in 1975 7.8 million.</p>
+                <p>Pol Pot and the Khmer Rouge had long been supported by the Chinese Communist Party (CCP) and its chairman, Mao Zedong; it is estimated that at least 90% of the foreign aid that the Khmer Rouge received came from China, including at least US$1 billion in interest-free economic and military aid in 1975 alone. After it seized power in April 1975, the Khmer Rouge wanted to turn the country into an agrarian socialist republic, founded on the policies of ultra-Maoism and influenced by the Cultural Revolution. Pol Pot and other Khmer Rouge officials met with Mao in Beijing in June 1975, receiving approval and advice, while high-ranking CCP officials such as Politburo Standing Committee member Zhang Chunqiao later visited Cambodia to offer help. To fulfill its goals, the Khmer Rouge emptied the cities and forced Cambodians to relocate to labor camps in the countryside, where mass executions, forced labor, physical abuse, malnutrition, and disease were rampant.</p>
+            </div>
+        </div>
+    </section>
+    <div class="deaths">
+        <h2>Number of Deaths Caused:</h2>
+        <h3>Each person represents 100,000. (roughly the population of Dunedin)</h3>
+        <h4>2 Million</h4>
+        <div class="people" id="pot"></div>
+    </div>
+    <section class="kim">
+        <div class="row">
+            <div class="column">
+                <img src="kimbig.jpg" alt="loldsa">
+            </div>
+            <div class="column white">
+                <h2>4. Kim Il-sung (North Korea, 1948-1994):</h2>
+                <p>While not as widely recognized for casualties as some other leaders, Kim Il-sung's rule laid the groundwork for the oppressive regime in North Korea, contributing to significant human rights abuses and casualties.</p>
+                <p>Kim Il Sung was born and lived his early years on the 15 of April 1912 in the Mangyongdae neighborhood of Pyongyang in North Korea. This was during the time of Japan’s rule over Korea due to Japan’s absorption of Korea in 1910 after Japan defeated Russia in 1905.</p>
+                <p>During his teen years, he would become involved in many anti-Japanese activities, partly due to his parents being activists against Japanese rule over Korea. In the 1930s, he would later join other activities like Japanese guerrilla groups which would help fight for Korea’s independence. These activities and experiences would heavily influence political ideologies later in his life when he became a leader.</p>
+            </div>
+        </div>
+        <div class="column100">
+            <p>When World War 2 started, Kim Il Sung would operate as a significant figure against the Japanese. He would join, operate and lead different guerrilla groups and help resist the Japanese. He would also operate from bases in the Manchurian area of China and would strategically use the region’s terrain and geography as a stronghold for anti-Japanese activities. In 1945, it was the end of World War 2 and the Japanese empire was defeated. Korea was separated into two countries and with support from the Soviets. Kim Il Sung would emerge as a prominent political figure in North Korea and would become the leader of the Newly established Democratic People’s Republic of Korea a.k.a North Korea. </p>
+            <p>As a leader, He was associated with many controversial actions, an example would be the Korean War. An invasion of South Korea caused devastation and resulted in millions of deaths. Another would be his authoritarian regime which still carries over today with King Jong Un as it leads to restricting freedom, control over information and the highly centralized system of governance. Finally, His nuclear program has been a source of tension and concern around the world. This would also dictate the militarism of the country as well.</p>
+            <p>Overall, there isn’t an exact number of deaths due to his actions. Some estimate in the couple Hundred thousand while some estimate several millions. An approximation though would be 4 million from the Korean War, mass starvation due to economic struggles and other actions.</p>
+        </div>
+    </section>
+    <div class="deaths">
+        <h2>Number of Deaths Caused:</h2>
+        <h3>Each person represents 100,000. (roughly the population of Dunedin)</h3>
+        <h4>4 Million</h4>
+        <div class="people" id="kim"></div>
+    </div>
+    <section class="mao">
+        <div class="row">
+            <div class="column">
+                <img src="maobig.jpg" alt="Colored image of stalin">
+            </div>
+            <div class="column white">
+                <h2>3. Mao Zedong (China, 1949-1976):</h2>
+                <p>While credited with founding the People's Republic of China, Mao's policies like the Great Leap Forward and the Cultural Revolution which both caused widespread famines and economic disasters which together caused tens of millions of deaths.</p>
+                <p>The Great Leap Forward, initiated by Mao Zedong in 1958, stands as a pivotal but self-destructive chapter in the history of the People's Republic of China. It was an ambitious campaign that aimed at transforming China from an agrarian society into a socialist industrial society. However, the methods employed during this initiative resulted in widespread famine, economic turmoil, and the death of millions.</p>
+                <p>Central to the Great Leap Forward was the concept of collectivization. Mao sought to bring together agricultural labor by organizing "peasants" into large collective farms known as "People's Communes". Private farming was abolished, and resources were pooled together for communal use. However, this abrupt shift led to the collapse of traditional farming practices and the loss of individual incentives to work, causing a decline in agricultural productivity. This decline in agriculture thus contributed to the widespread famines and economic turmoil.</p>
+            </div>
+        </div>
+        <div class="column100">
+            <p>The campaign also emphasized the establishment of backyard steel furnaces and communal industrial enterprises. In this citizens were encouraged to produce steel in small-scale backyard furnaces to meet overly ambitious production targets set by the government. Unfortunately, these efforts resulted in the movement of essential resources and labour away from agriculture and crucial industries. Further contributing to the famine and economic turmoil. Secondly, the steel produced in these furnaces was of low quality and unsuitable for industrial use. The reason for this is that they were often only capable of producing pig iron –also known as crude iron.</p>
+            <p>Additionally, the government's imposition of exaggerated production quotas further compounded the issues. Local officials, fearing repercussions for failure, often resorted to reporting inflated or incorrect production figures. This thus misled central authorities and resulted in a disconnect between reported and actual production levels.</p>
+            <p>Communal living arrangements and massive public works projects were also part of the Great Leap Forward. While intended to showcase rapid progress, these endeavors were often poorly planned and executed. They diverted manpower and resources away from critical sectors, adding to the inefficiencies and accelerating the economic decline.</p>
+            <p>This all meant the consequences of the Great Leap Forward were catastrophic. The disruption of agricultural practices, inefficiencies produced in all sectors, and the diversion of resources toward unrealistic industrial targets led to a sharp decline in food production. This resulted in widespread famine, with millions of people across China starving and dying of related illnesses. On top of this the economic downturn also heavily contributed to an increase in deaths</p>
+        </div>
+    </section>
+    <div class="deaths">
+        <h2>Number of Deaths Caused:</h2>
+        <h3>Each person represents 100,000. (roughly the population of Dunedin)</h3>
+        <h4>45 Million</h4>
+        <div class="people" id="mao"></div>
+        
+    </div>
+    <section class="hitler">
+        <div class="row">
+            <div class="column">
+                <img src="hitlerbig.jpg" alt="loldsa">
+            </div>
+            <div class="column white">
+                <h2>2. Adolf Hitler (Germany, 1933-1945):</h2>
+                <p>The architect of the Holocaust and initiator of World War II, Hitler's actions led to the genocide of six million Jews and the deaths of millions more through warfare and persecution.</p>
+                <p>Adolf Hitler was born on April 20, 1889, In Austria. His rise to power would begin in 1919 when he joined the German Workers’ Party which would later become the Nazi party. Due to his skills and use of propaganda, he would become the leader. After a further presidential run and the death of Paul von Hindenburg, this would lead to Hitler securing the position of Fuhrer (leader). In 1933, the Nazis, (known as the German Reich by then) were led by Hitler and all together would control Germany. This would transform the country into a totalitarian dictatorship. </p>
+                <p>During his dictatorship, he decided to invade Poland in 1939. Since Poland was guaranteed to have military support from the British and French. 2 days after the invasion. The 2 countries would declare war on Germany, Sprouting World War 2.</p>
+                <p>During the war, Hitler would further do more damage by being the architect of the holocaust. A massive genocide against the Jews. Here, Jewish people were systematically tortured and murdered because Hitler blamed them for the loss and fall of Germany in the aftermath of World War 2. Hitler would continue this operation until his suicide in 1945 due to Germany losing the war.</p>
+                <p>Overall, Hitler caused the death of 6 million Jews, 5 million non-Jews and millions of others due to the effect of warfare and prosecutions. These effects were catastrophic.</p>
+            </div>
+        </div>
+    </section>
+    <div class="deaths">
+        <h2>Number of Deaths Caused:</h2>
+        <h3>Each person represents 100,000. (roughly the population of Dunedin)</h3>
+        <h4>16.3 Million</h4>
+        <div class="people" id="hitler"></div>
+        <h3>(including all WW2 the esimate is as high as 85 million)</h3>
+        <h3>Here is a demonstation that if it was full-size would take up way too much space: </h3>
+        <div class="people small" id="hitler2"></div>
+    </div>
+    <section class="stalin">
+        <div class="row">
+            <div class="column">
+                <img src="stalinbig.jpg" alt="Colored image of stalin">
+            </div>
+            <div class="column white">
+                <h2>1. Joseph Stalin (Soviet Union, 1924-1953):</h2>
+                <p>Responsible for the deaths of millions through purges, forced labor camps, and man-made famines, Stalin's rule is estimated to have caused the highest death toll among leaders in history.</p>
+                <p>Joseph Stalin was a leader of the Soviet Union a while back, and he did some really harmful things that resulted in the loss of many lives. One of his devastating actions was forcing people to share their farms, leading to widespread food shortages, especially in Ukraine. This man-made crisis caused a massive number of deaths, with estimates reaching into the millions.</p>
+                <p>Stalin also established labor camps called Gulags, where people had to work under harsh conditions with insufficient food. The toll on human life in these camps was significant, though the exact number is challenging to determine, it's believed to be in the millions.</p>
+                <p>The importance of human lives lies in the uniqueness of each individual, with their own experiences and capabilities. Recognizing this uniqueness emphasizes the need for leaders to act ethically and with compassion, avoiding the tragic consequences seen in history when the well-being of individuals is overlooked</p>
+            </div>
+        </div>
+    </section>
+    <div class="deaths">
+        <h2>Number of Deaths Caused:</h2>
+        <h3>Each person represents 100,000. (roughly the population of Dunedin)</h3>
+        <h4>60 Million</h4>
+        <div class="people" id="stalin"></div>
+        <h2>Bonus Video:</h2>
+        <div class="iframebox">
+            <iframe src="https://www.youtube.com/embed/JhuUb3uTFVY" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/51347814c6.js" crossorigin="anonymous"></script>
+    <script>
+        const iconData = {
+            stalin: 600,
+            hitler: 163,
+            mao: 450,
+            pot: 20,
+            hitler2: 850,
+            kim: 40
+        };
+    
+        function generateIcons() {
+            for (const containerId in iconData) {
+                if (Object.hasOwnProperty.call(iconData, containerId)) {
+                    const iconContainer = document.getElementById(containerId);
+                    const numIcons = iconData[containerId];
+                    iconContainer.innerHTML = '';
+                    for (let i = 0; i < numIcons; i++) {
+                        const icon = document.createElement('i');
+                        icon.classList.add('fa', 'fa-solid', 'fa-person');
+                        iconContainer.appendChild(icon);
+                    }
+                }
+            }
+        }
+        window.onload = function() {
+        generateIcons();
+        };
+      </script>
+</body>
+</html>
