@@ -15,6 +15,9 @@
             box-sizing: border-box;
             font-family: 'poppins', sans-serif;
         }
+        body{
+            overflow-x: hidden;
+        }
         p{
             margin: 1em 0;
         }
@@ -32,7 +35,6 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            color: #fff;
         }
         .hitler{
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('flagermany.svg');
@@ -184,7 +186,7 @@
             height: 100%;
             border: 0;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1200px) {
             .row{
                 flex-direction: column;
             }
@@ -197,13 +199,35 @@
             .fa-solid{
                 font-size: 1.5em;
             }
+            .people.small{
+                width: 80%;
+                grid-template-columns: repeat(20, 1fr);
+                gap: 0.4em;
+            }
+            .people.small .fa-solid{
+                font-size: 0.8em;
+            }
         }
         @media (max-width: 700px) {
             .people{
-                grid-template-columns: repeat(10, 1fr);
+                grid-template-columns: repeat(20, 1fr);
+                gap: 0.6em;
             }
             .fa-solid{
-                font-size: 1.3em;
+                font-size: 0.8em;
+            }
+            h3{
+                font-size: 0.8em;
+                text-align: center;
+                padding: 15px;
+            }
+            .people.small{
+                width: 80%;
+                grid-template-columns: repeat(20, 1fr);
+                gap: 0.6em;
+            }
+            .people.small .fa-solid{
+                font-size: 0.6em;
             }
         }
     </style>
@@ -213,7 +237,7 @@
         <div class="content">
             <h1>The Five Worst Leaders in History</h1>
             <div class="image-gallery">
-                <img src="stalin.jpg" alt="Image of Stalin">
+                <img src="Stalin.jpg" alt="Image of Stalin">
                 <img src="hitler.jpg" alt="Image of Hitler">
                 <img src="mao.jpg" alt="Image of Mao Zedong">
                 <img src="kim.jpg" alt="Image of Kim il Sung">
@@ -321,11 +345,14 @@
             </div>
             <div class="column white">
                 <h2>1. Joseph Stalin (Soviet Union, 1924-1953):</h2>
-                <p>Responsible for the deaths of millions through purges, forced labor camps, and man-made famines, Stalin's rule is estimated to have caused the highest death toll among leaders in history.</p>
-                <p>Joseph Stalin was a leader of the Soviet Union a while back, and he did some really harmful things that resulted in the loss of many lives. One of his devastating actions was forcing people to share their farms, leading to widespread food shortages, especially in Ukraine. This man-made crisis caused a massive number of deaths, with estimates reaching into the millions.</p>
-                <p>Stalin also established labor camps called Gulags, where people had to work under harsh conditions with insufficient food. The toll on human life in these camps was significant, though the exact number is challenging to determine, it's believed to be in the millions.</p>
-                <p>The importance of human lives lies in the uniqueness of each individual, with their own experiences and capabilities. Recognizing this uniqueness emphasizes the need for leaders to act ethically and with compassion, avoiding the tragic consequences seen in history when the well-being of individuals is overlooked</p>
+                <p>Responsible for the deaths of millions through purges, forced labour camps, and man-made famines, Stalin's rule is estimated to have caused the highest death toll among leaders in history based on deaths caused by direct order and not general incompetence.</p>
+                <p>Born to a poor family in Gori in the Russian Empire (now Georgia), Stalin attended the Tbilisi Spiritual Seminary before joining the Marxist Russian Social Democratic Labour Party. He edited the party's newspaper, Pravda, and raised funds for Vladimir Lenin's Bolshevik faction via robberies, kidnappings and protection rackets. Repeatedly arrested, he underwent several internal exiles to Siberia. After the Bolsheviks seized power in the October Revolution and created a one-party state under the new Communist Party in 1917, Stalin joined its governing Politburo. Serving in the Russian Civil War before overseeing the Soviet Union's establishment in 1922, Stalin then assumed leadership over the country following Lenin's death in 1924. Now under Stalin, socialism in one country became a central principle of the party's ideology. </p>
+                
             </div>
+        </div>
+        <div class="column100">
+            <p>After this his Five-Year Plans (also known as the Five-Year Plans of The Soviet Union) were implemented, the country thus underwent agricultural collectivisation and rapid industrialisation, creating a centralized planned economy. Though this led to severe disruptions to food production and contributed to the famine of 1930–33, including the Asharshylyk in Kazakhstan and the Holodomor in Ukraine. Both of these, are recognised as an attempted genocide.</p>
+            <p>To eradicate accused "enemies of the working class", Stalin instituted the Great Purge, in which over a million were imprisoned, largely in the Gulag system of forced labour camps, and at least 700,000 were executed between 1934 and 1939. By 1937, he had absolute control over the party and government.</p>
         </div>
     </section>
     <div class="deaths">
@@ -337,11 +364,12 @@
         <div class="iframebox">
             <iframe src="https://www.youtube.com/embed/JhuUb3uTFVY" frameborder="0" allowfullscreen></iframe>
         </div>
+        <h2>Also try find the secrect skull emoji and click on it.</h2>
     </div>
     <script src="https://kit.fontawesome.com/51347814c6.js" crossorigin="anonymous"></script>
     <script>
         const iconData = {
-            stalin: 600,
+            stalin: 2000,
             hitler: 163,
             mao: 450,
             pot: 20,
@@ -365,7 +393,22 @@
         }
         window.onload = function() {
         generateIcons();
+        const icons = document.querySelectorAll('.fa.fa-solid.fa-person');
+        const randomIndex = Math.floor(Math.random() * icons.length);
+        console.log(icons.length)
+
+        const link = document.createElement('a');
+        link.href = 'https://www.youtube.com/watch?v=JhuUb3uTFVY';
+
+        const skullIcon = document.createElement('i');
+        skullIcon.classList.add('fa-solid', 'fa-skull');
+
+        link.appendChild(skullIcon);
+
+        icons[randomIndex].parentNode.replaceChild(link, icons[randomIndex]);  
         };
+
+        
       </script>
 </body>
 </html>
